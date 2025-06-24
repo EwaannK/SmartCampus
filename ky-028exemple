@@ -1,0 +1,13 @@
+void setup() {
+   pinMode(12, OUTPUT);
+   pinMode(2, INPUT);
+
+   Serial.begin(9600);
+}
+
+void loop() {
+   Serial.print("Signal - "); 
+   Serial.println(digitalRead(2)); //valeur entre O et 1023
+
+   if (digitalRead(2) == HIGH) { digitalWrite (12, LOW); }
+   if (digitalRead(2) == LOW) { digitalWrite (12, HIGH); }
